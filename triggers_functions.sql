@@ -1,4 +1,3 @@
--- פונקציה לחישוב הנחה
 CREATE FUNCTION CalculateDiscount(@OrderID INT)
 RETURNS DECIMAL(18, 2)
 AS
@@ -12,7 +11,7 @@ BEGIN
 END;
 GO
 
--- טריגר לעדכון מלאי אחרי כל הוספה להזמנה
+
 CREATE TRIGGER UpdateStockAfterOrder
 ON OrderDetails
 AFTER INSERT
@@ -29,7 +28,7 @@ BEGIN
 END;
 GO
 
--- פונקציה לחישוב מספר ההזמנות של לקוח
+
 CREATE FUNCTION GetCustomerOrderCount(@CustomerID INT)
 RETURNS INT
 AS
@@ -43,7 +42,7 @@ BEGIN
 END;
 GO
 
--- פונקציה לחישוב הסכום הכולל של הזמנה
+
 CREATE FUNCTION GetOrderTotal(@OrderID INT)
 RETURNS DECIMAL(18, 2)
 AS
@@ -58,7 +57,6 @@ END;
 GO
 
 
--- טריגר לעדכון מספר ההזמנות של לקוח לאחר הוספת הזמנה חדשה
 CREATE TRIGGER UpdateCustomerOrderCountAfterInsert
 ON Orders
 AFTER INSERT
@@ -76,7 +74,6 @@ END;
 GO
 
 
--- טריגר לעדכון מצב מלאי המוצר לאחר עדכון פרטי הזמנה
 CREATE TRIGGER UpdateStockAfterOrderUpdate
 ON OrderDetails
 AFTER UPDATE
