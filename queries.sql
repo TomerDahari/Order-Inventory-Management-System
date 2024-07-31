@@ -7,7 +7,7 @@ JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
 GROUP BY YEAR(OrderDate), MONTH(OrderDate)
 ORDER BY OrderYear, OrderMonth;
 
--- ãåç îåöøéí òí îìàé ðîåê
+
 SELECT 
     ProductName, 
     UnitsInStock, 
