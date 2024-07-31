@@ -1,4 +1,3 @@
--- יצירת טבלת לקוחות
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY IDENTITY,
     FirstName NVARCHAR(50),
@@ -11,7 +10,7 @@ CREATE TABLE Customers (
     Country NVARCHAR(50)
 );
 
--- יצירת טבלת מוצרים
+
 CREATE TABLE Products (
     ProductID INT PRIMARY KEY IDENTITY,
     ProductName NVARCHAR(100),
@@ -25,7 +24,7 @@ CREATE TABLE Products (
     Discontinued BIT
 );
 
--- יצירת טבלת הזמנות
+
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY IDENTITY,
     CustomerID INT,
@@ -43,7 +42,7 @@ CREATE TABLE Orders (
     ShipCountry NVARCHAR(50)
 );
 
--- יצירת טבלת פרטי הזמנות
+
 CREATE TABLE OrderDetails (
     OrderDetailID INT PRIMARY KEY IDENTITY,
     OrderID INT,
@@ -53,7 +52,7 @@ CREATE TABLE OrderDetails (
     Discount DECIMAL(18, 2)
 );
 
--- יצירת טבלת ספקים
+
 CREATE TABLE Suppliers (
     SupplierID INT PRIMARY KEY IDENTITY,
     CompanyName NVARCHAR(100),
@@ -69,7 +68,7 @@ CREATE TABLE Suppliers (
     HomePage NVARCHAR(200)
 );
 
--- יצירת טבלת קטגוריות
+
 CREATE TABLE Categories (
     CategoryID INT PRIMARY KEY IDENTITY,
     CategoryName NVARCHAR(50),
