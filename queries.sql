@@ -1,4 +1,4 @@
--- гез олйшеъ зегщй
+-- ГЈГҐГ§ Г®Г«Г©ГёГҐГє Г§ГҐГЈГ№Г©
 SELECT 
     YEAR(OrderDate) AS OrderYear, 
     MONTH(OrderDate) AS OrderMonth,
@@ -8,7 +8,7 @@ JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
 GROUP BY YEAR(OrderDate), MONTH(OrderDate)
 ORDER BY OrderYear, OrderMonth;
 
--- гез оецшйн тн омай роек
+-- ГЈГҐГ§ Г®ГҐГ¶ГёГ©Г­ ГІГ­ Г®Г¬Г Г© Г°Г®ГҐГЄ
 SELECT 
     ProductName, 
     UnitsInStock, 
@@ -18,7 +18,7 @@ WHERE UnitsInStock < ReorderLevel;
 GO
 
 
--- гез мчезеъ тн слен джореъ лемм
+-- ГЈГҐГ§ Г¬Г·ГҐГ§ГҐГє ГІГ­ Г±Г«ГҐГ­ Г¤Г¦Г®Г°ГҐГє Г«ГҐГ¬Г¬
 SELECT 
     C.CustomerID, 
     C.FirstName, 
@@ -31,7 +31,7 @@ GROUP BY C.CustomerID, C.FirstName, C.LastName
 ORDER BY TotalSpent DESC;
 GO
 
--- гез оецшйн фефемшййн (дролшйн бйеъш)
+-- ГЈГҐГ§ Г®ГҐГ¶ГёГ©Г­ ГґГҐГґГҐГ¬ГёГ©Г©Г­ (Г¤Г°Г®Г«ГёГ©Г­ ГЎГ©ГҐГєГё)
 SELECT 
     P.ProductID, 
     P.ProductName, 
@@ -43,7 +43,7 @@ ORDER BY TotalSold DESC;
 GO
 
 
--- гез длрсеъ зегщйеъ мфй чивешйеъ
+-- ГЈГҐГ§ Г¤Г«Г°Г±ГҐГє Г§ГҐГЈГ№Г©ГҐГє Г¬ГґГ© Г·ГЁГўГҐГёГ©ГҐГє
 SELECT 
     YEAR(O.OrderDate) AS OrderYear, 
     MONTH(O.OrderDate) AS OrderMonth,
