@@ -1,4 +1,3 @@
--- ãåç îëéøåú çåãùé
 SELECT 
     YEAR(OrderDate) AS OrderYear, 
     MONTH(OrderDate) AS OrderMonth,
@@ -18,7 +17,6 @@ WHERE UnitsInStock < ReorderLevel;
 GO
 
 
--- ãåç ì÷åçåú òí ñëåí äæîðåú ëåìì
 SELECT 
     C.CustomerID, 
     C.FirstName, 
@@ -31,7 +29,7 @@ GROUP BY C.CustomerID, C.FirstName, C.LastName
 ORDER BY TotalSpent DESC;
 GO
 
--- ãåç îåöøéí ôåôåìøééí (äðîëøéí áéåúø)
+
 SELECT 
     P.ProductID, 
     P.ProductName, 
@@ -43,7 +41,6 @@ ORDER BY TotalSold DESC;
 GO
 
 
--- ãåç äëðñåú çåãùéåú ìôé ÷èâåøéåú
 SELECT 
     YEAR(O.OrderDate) AS OrderYear, 
     MONTH(O.OrderDate) AS OrderMonth,
