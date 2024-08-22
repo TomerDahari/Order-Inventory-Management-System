@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE TABLE Products (
     ProductID INT PRIMARY KEY IDENTITY(1,1),
     ProductName NVARCHAR(100) NOT NULL,
