@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Search</title>
+</head>
+<body>
+    <h1>Search Products</h1>
+    <form method="POST">
+        <label for="search_term">Enter product name:</label>
+        <input type="text" name="search_term" id="search_term">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for product in products %}
+        <li>{{ product[1] }} - {{ product[2] }} - Quantity: {{ product[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

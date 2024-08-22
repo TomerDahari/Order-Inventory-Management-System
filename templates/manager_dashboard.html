@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Dashboard</title>
+</head>
+<body>
+    <h1>Manager Dashboard</h1>
+    
+    <h2>Add Product</h2>
+    <form method="POST">
+        <label for="product_name">Product Name:</label>
+        <input type="text" name="product_name" id="product_name" required><br>
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" required><br>
+        <label for="quantity">Quantity:</label>
+        <input type="text" name="quantity" id="quantity" required><br>
+        <button type="submit" name="add_product">Add Product</button>
+    </form>
+
+    <h2>All Products</h2>
+    <ul>
+        {% for product in products %}
+        <li>
+            {{ product[1] }} - {{ product[2] }} - Quantity: {{ product[3] }}
+            <form action="{{ url_for('delete_product_route', product_id=product[0]) }}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Update Order Status</h2>
+    <form method="POST">
+        <label for="order_id">Order ID:</label>
+        <input type="text" name="order_id" id="order_id" required><br>
+        <label for="new_status">New Status:</label>
+        <input type="text" name="new_status" id="new_status" required><br>
+        <button type="submit" name="update_order">Update Order</button>
+    </form>
+
+    <h2>All Orders</h2>
+    <ul>
+        {% for order in orders %}
+        <li>Order ID: {{ order[0] }}, Customer: {{ order[1] }}, Date: {{ order[2] }}, Status: {{ order[3] }}, Product ID: {{ order[4] }}, Quantity: {{ order[5] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

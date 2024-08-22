@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li style="color: red;">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label for="role">Choose your role:</label>
+        <select name="role" id="role" onchange="toggleFields()">
+            <option value="customer">Customer</option>
+            <option value="manager">Manager</option>
+        </select><br><br>
+
+        <div id="customerFields">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password"><br><br>
+        </div>
+
+        <div id="managerFields" style="display: none;">
+            <label for="password">Manager Password:</label>
+            <input type="password" name="password" id="password"><br><br>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        function toggleFields() {
+            var role = document.getElementById('role').value;
+            var customerFields = document.getElementById('customerFields');
+            var managerFields = document.getElementById('managerFields');
+            
+            if (role === 'manager') {
+                customerFields.style.display = 'none';
+                managerFields.style.display = 'block';
+            } else {
+                customerFields.style.display = 'block';
+                managerFields.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
